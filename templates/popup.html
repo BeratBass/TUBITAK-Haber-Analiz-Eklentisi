@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" />
+    <title>Haber Analiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/popup.css" />
+</head>
+<body>
+    <div class="container" id="main-container">
+        <!-- Oturum Açılmamışsa Gösterilecek Alan -->
+        <div id="auth-container" class="auth-container">
+            <div id="login-form" class="auth-form">
+                <h2>Giriş Yap</h2>
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder="E-posta adresiniz" required />
+                    <div style="position: relative;">
+                        <input type="password" id="login-password" placeholder="Şifreniz" required />
+                        <button type="button" class="password-toggle" id="toggle-login-password">👁️</button>
+                    </div>
+                </div>
+                <button id="login-btn" class="auth-btn">Giriş Yap</button>
+                <div class="loading" id="login-loading" style="display: none;"></div>
+                <p class="switch-auth">Hesabınız yok mu? <a href="#" id="show-register-link">Kayıt Ol</a></p>
+            </div>
+
+            <div id="register-form" class="auth-form register-form" style="display: none;">
+                <h2>Kayıt Ol</h2>
+                <div class="input-group">
+                    <input type="text" id="register-isim" placeholder="İsim" required />
+                    <input type="text" id="register-soyisim" placeholder="Soyisim" required />
+                </div>
+                <div class="input-group">
+                    <input type="email" id="register-email" placeholder="E-posta adresiniz" required />
+                    <div style="position: relative;">
+                        <input type="password" id="register-password" placeholder="Şifreniz" required />
+                        <button type="button" class="password-toggle" id="toggle-register-password">👁️</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="register-yas" placeholder="Yaş" min="1" max="120" required />
+                    <input type="text" id="register-sehir" placeholder="Şehir" required />
+                </div>
+                <button id="register-btn" class="auth-btn">Kayıt Ol</button>
+                <div class="loading" id="register-loading" style="display: none;"></div>
+                <p class="switch-auth">Hesabınız var mı? <a href="#" id="show-login-link">Giriş Yap</a></p>
+            </div>
+        </div>
+
+        <!-- Oturum Açıldığında Gösterilecek Alan -->
+        <div id="app-container" style="display: none;">
+            <div class="tabs">
+                <div class="tab active" data-tab="analiz" id="analiz-tab">Analiz</div>
+                <div class="tab" data-tab="profil">Profil</div>
+            </div>
+
+            <div id="analiz" class="tab-content active">
+                <div id="analiz-warning" class="warning" style="display: none;">
+                    <span class="warning-icon">!</span> Profil kaydı gerekli!
+                </div>
+                <div id="error-message" class="error-message"></div>
+                <div class="analiz-card">
+                    <div class="analiz-icon">📰</div>
+                    <h2 class="news-title" id="news-title">Yükleniyor...</h2>
+                    <div class="loading" id="loading"></div>
+                    <div class="result" id="result"></div>
+                </div>
+                <div class="toggle-container">
+                    <label for="block-negative-content" class="toggle-label">Olumsuz İçerik Engelle</label>
+                    <input type="checkbox" id="block-negative-content" />
+                    <span class="toggle-switch"></span>
+                </div>
+            </div>
+
+            <div id="profil" class="tab-content">
+                <div id="profile-info" class="profil-container">
+                    <div class="user-card">
+                        <div class="user-header">
+                            <span id="user-name" class="user-name"></span>
+                            <div class="profile-actions">
+                                <button id="edit-profile-btn">Ayarlar</button>
+                                <button id="logout-btn">Çıkış</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">Toplam: <span id="toplam-analiz">0</span></div>
+                        <div class="stat-item">Olumlu: <span id="olumlu-analiz">0</span></div>
+                        <div class="stat-item">Olumsuz: <span id="olumsuz-analiz">0</span></div>
+                    </div>
+                    <div class="table-container">
+                        <table class="modern-table" id="gecmis-analizler">
+                            <thead>
+                                <tr><th>Başlık</th><th>Sonuç</th><th>Tarih</th></tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="pagination" id="profile-pagination"></div>
+                    </div>
+                    <button id="delete-all-btn" class="delete-button">Tümünü Sil</button>
+                </div>
+
+                <div id="edit-profile-modal" class="modal" style="display: none;">
+                    <div class="modal-content" style="max-height: 400px; overflow-y: auto;">
+                        <input type="text" id="edit-isim" placeholder="İsim" required />
+                        <input type="text" id="edit-soyisim" placeholder="Soyisim" required />
+                        <input type="email" id="edit-email" placeholder="E-posta" required />
+                        <input type="number" id="edit-yas" placeholder="Yaş" min="1" max="120" required />
+                        <input type="text" id="edit-sehir" placeholder="Şehir" required />
+                        <input type="password" id="edit-current-password" placeholder="Mevcut Şifre" required />
+                        <input type="password" id="edit-new-password" placeholder="Yeni Şifre (isteğe bağlı)" />
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <button id="save-changes-btn">Kaydet</button>
+                            <button id="cancel-edit-btn">İptal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="/static/js/toastr.min.js"></script>
+    <script src="/static/js/popup.js"></script>
+</body>
+</html>

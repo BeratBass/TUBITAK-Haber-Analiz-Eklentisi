@@ -1,0 +1,69 @@
+# ===============================
+# 🔒 Gizli Dosyalar ve Klasörler
+# ===============================
+
+# Veri ve model klasörleri (isimleri gizli tutulacak)
+*/           # Alt klasörleri tarama
+!*/          # Ana klasörleri koru
+**/          # Tüm alt dizinleri göz ardı et
+# Gizli veri klasörleri — adları bilinmesin
+*/private*/
+*/data*/
+*/dataset*/
+*/storage*/
+*/secret*/
+*/model*/
+*/hidden*/
+*/confidential*/
+*/secure*/
+
+# Tüm .pkl, .csv, .json, .txt dosyaları (dosya adı fark etmeksizin)
+*.pkl
+*.csv
+*.json
+*.txt
+
+# ===============================
+# 🧠 Python ve Flask
+# ===============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+instance/
+.env
+.env.*
+
+# ===============================
+# 🧩 Node.js / Chrome Extension
+# ===============================
+node_modules/
+npm-debug.log*
+package-lock.json
+dist/
+build/
+
+# ===============================
+# 💻 IDE / OS / Sistem Dosyaları
+# ===============================
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ===============================
+# 🎞️ Demo / Medya (isteğe bağlı)
+# ===============================
+*.gif
+*.mp4
+*.png
+*.jpg
+*.jpeg

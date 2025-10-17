@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veriler Sayfası - Haber Analiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/veriler.css">
+</head>
+<body>
+    <div class="container analiz-container">
+        <div class="tabs">
+            <div class="tab active" data-tab="anlik">Anlık Veriler</div>
+            <div class="tab" data-tab="admin">Admin Paneli</div>
+        </div>
+        <div id="anlik" class="tab-content active">
+            <h2 class="section-title">Anlık Analiz</h2>
+            <div class="grid-container">
+                <div class="box baslik-box" id="baslik">Başlık Yükleniyor...</div>
+                <div class="box sonuc-box" id="sonuc">Analiz yok</div>
+                <div class="box metin-box" id="metin"><h3>Metin</h3>Metin Yükleniyor...</div>
+            </div>
+            <button class="update-button" id="update-btn">Güncelle</button>
+        </div>
+        <div id="admin" class="tab-content">
+            <h2 class="section-title">Admin Paneli</h2>
+            <div class="admin-section">
+                <h3 class="section-title">Kullanıcılar ve Analizleri</h3>
+                <input type="text" id="search-users" placeholder="Kullanıcı ara..." style="margin-bottom: 15px; padding: 10px; width: 100%;">
+                <div class="table-container">
+                    <table class="modern-table" id="users-table">
+                        <thead>
+                            <tr>
+                                <th>İsim</th>
+                                <th>Soyisim</th>
+                                <th>E-posta</th>
+                                <th>Yaş</th>
+                                <th>Şehir</th>
+                                <th>Analiz Sayısı</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body"></tbody>
+                    </table>
+                    <div class="pagination" id="admin-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/toastr.min.js"></script>
+    <script src="/static/js/veriler.js"></script>
+</body>
+</html>
