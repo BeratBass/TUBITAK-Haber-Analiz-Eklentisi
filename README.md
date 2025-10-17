@@ -5,6 +5,16 @@
 
 ---
 
+## 🎥 **Uygulama Tanıtım GIF'i**
+
+<p align="center">
+  <img src="./eklenti.gif" alt="Haber Analiz Eklentisi Demo" width="320"/>
+  <br/>
+  <em>Chrome eklentisinin çalışma örneği — haber analizi ve içerik engelleme süreci.</em>
+</p>
+
+---
+
 ## 📰 **Proje Özeti**
 
 Bu sistem iki ana bileşenden oluşur:
@@ -51,9 +61,7 @@ Kodlar **görsel olarak incelenebilir**, ancak **hiçbir şekilde kullanılamaz,
 
 ---
 
-
 ## 🧩 **Sistem Çalışma Şeması**
-
 
 1. Eklenti, desteklenen haber sitesindeki başlık ve metni algılar.  
 2. Flask API’ye gönderir.  
