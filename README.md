@@ -85,7 +85,8 @@ Herhangi bir şekilde izinsiz kullanım, **Telif Hakkı İhlali (Fikir ve Sanat 
 
 **Berat Baş**  
 📍 TÜBİTAK Destekli Proje Geliştiricisi  
-📧 (isteğe bağlı e-posta adresi yazılabilir)
+🔗 [LinkedIn](https://www.linkedin.com/in/berat-baş-6a91a3274) | [GitHub](https://github.com/BeratBass)
+
 
 ---
 
