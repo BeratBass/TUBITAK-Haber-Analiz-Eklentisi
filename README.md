@@ -51,17 +51,6 @@ Kodlar **görsel olarak incelenebilir**, ancak **hiçbir şekilde kullanılamaz,
 
 ---
 
-## 🧠 **Teknik Özellikler**
-
-- **Backend:** Python (Flask), SQLite, bcrypt
-- **Makine Öğrenmesi:** XGBoost + TF-IDF
-- **Frontend:** HTML, CSS, JavaScript (Manifest v3 Chrome Extension)
-- **API iletişimi:** JSON tabanlı REST
-- **Analiz Türü:** Duygu analizi (0–10 ölçekli, Olumlu / Olumsuz sınıflandırma)
-- **Kullanıcı İşlevleri:** Giriş, kayıt, şifre yenileme, analiz geçmişi
-- **Admin Paneli:** Kullanıcı ve analiz istatistikleri yönetimi
-
----
 
 ## 🧩 **Sistem Çalışma Şeması**
 
