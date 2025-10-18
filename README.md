@@ -8,7 +8,7 @@
 ## 🎥 **Uygulama Tanıtım GIF'i**
 
 <p align="center">
-  <img src="./eklenti.gif" alt="Haber Analiz Eklentisi Demo" width="320"/>
+  <img src="./eklenti.gif" alt="Haber Analiz Eklentisi Demo" width="500"/>
   <br/>
   <em>Chrome eklentisinin çalışma örneği — haber analizi ve içerik engelleme süreci.</em>
 </p>
